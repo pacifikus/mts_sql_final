@@ -120,14 +120,15 @@ class PostgresUpdater:
                 connect.commit()
 
 
-with PostgresUpdater(process_num=20) as pu:
-    result = pu.start()
-    print(
-        tabulate(
-            [
-                [item.PID, item.error_count, item.updated_count]
-                for item in result
-            ],
-            headers=["PID", "Errors", "Updated rows"],
+if __name__ == '__main__':
+    with PostgresUpdater(process_num=20) as pu:
+        result = pu.start()
+        print(
+            tabulate(
+                [
+                    [item.PID, item.error_count, item.updated_count]
+                    for item in result
+                ],
+                headers=["PID", "Errors", "Updated rows"],
+            )
         )
-    )

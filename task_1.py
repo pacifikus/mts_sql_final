@@ -136,7 +136,9 @@ isolation_levels = {
         psycopg2.extensions.ISOLATION_LEVEL_READ_UNCOMMITTED,
 }
 
-for level, num in isolation_levels.items():
-    with PostgresCommitter(isolation_level=num, duration=15) as pc:
-        result = pc.start()
-        plot_counts(result, level)
+
+if __name__ == '__main__':
+    for level, num in isolation_levels.items():
+        with PostgresCommitter(isolation_level=num, duration=15) as pc:
+            result = pc.start()
+            plot_counts(result, level)
