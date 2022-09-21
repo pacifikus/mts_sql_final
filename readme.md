@@ -42,7 +42,7 @@
 Для запуска необходимо: 
 - установить зависимости `pip install -r requirements.txt`
 - создать в корне проекта файл .env и задать в нем логин и пароль для PostgreSQL (см [python-dotenv](https://github.com/theskumar/python-dotenv))
-- запустить task_1.py или task_2.py соответственно
+- запустить `python task_1.py` или `python task_2.py` соответственно
 
 
 ### Пример консольного вывода в задаче 2
